@@ -37,3 +37,24 @@ En esta etapa del proyecto, el objetivo fue **preprocesar los frames extraídos*
 
 ### Objetivo
 Estandarizar y limpiar los frames para que los datos visuales estén listos para análisis, modelado o integración en pipelines de visión por computadora.
+
+## Anotación y Etiquetado de Datos 
+
+En esta fase, nos enfocamos en la creación y validación de datasets anotados para tareas de detección de objetos, utilizando herramientas y formatos estándar del ecosistema de visión por computadora.
+
+### 🔹 Actividades realizadas
+
+- Instalación y configuración de CVAT para anotación colaborativa.  
+- Importación y etiquetado de un conjunto de imágenes con bounding boxes y asignación de clases.  
+- Exportación de las anotaciones en formatos **YOLO** y **COCO** para máxima compatibilidad con frameworks de deep learning.  
+- Validación manual y automatizada de los archivos de anotación YOLO (`.txt`), asegurando que las coordenadas estén correctamente normalizadas entre 0 y 1.  
+- Exploración de la estructura del archivo JSON de COCO, identificando y comprendiendo sus componentes clave: `images`, `annotations` y `categories`.
+
+### 🔹 Resultados y aprendizajes clave
+
+- Comprensión profunda de los formatos de anotación y su impacto en el entrenamiento de modelos.  
+- Implementación de un script en Python para validar la calidad y consistencia de las anotaciones YOLO, reduciendo errores y mejorando la confiabilidad del dataset. (validacion_txtYolo.ipynb) 
+- Familiarización con el flujo completo de anotación, exportación y validación, sentando las bases para la integración con pipelines de entrenamiento.
+
+### Objetivo
+Consolidar un flujo completo y confiable de anotación y validación de datos visuales, utilizando formatos estándar (YOLO y COCO), que permita generar datasets de alta calidad listos para entrenamiento de modelos de visión por computadora. Esto asegura que las anotaciones sean precisas, consistentes y compatibles con múltiples frameworks, facilitando el desarrollo eficiente y escalable de soluciones de detección y clasificación.
