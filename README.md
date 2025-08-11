@@ -14,3 +14,26 @@ Este flujo permitirá tener datasets limpios, balanceados y listos para entrenam
 ├── src/                  # Código fuente
 ├── .gitignore            # Ignorar data y archivos temporales
 ├── README.md             # Documentación principal
+```
+## Procesamiento y Transformación de Frames
+
+En esta etapa del proyecto, el objetivo fue **preprocesar los frames extraídos** para prepararlos para futuras tareas de análisis y modelado.  
+
+### 🔹 Actividades realizadas
+1. **Lectura de imágenes con OpenCV**  
+   - Uso de `cv2.imread()` para cargar imágenes desde `data/processed`.
+   - Verificación de rutas y control de errores para asegurar la carga correcta.
+
+2. **Redimensionamiento (Resize)**  
+   - Uso de `cv2.resize()` para normalizar la resolución de los frames a un tamaño estándar (300x300 px).  
+   - Esto facilita el procesamiento en modelos de visión por computadora y reduce el costo computacional.
+
+3. **Recorte (Crop)**  
+   - Selección de una región específica de interés (`img[y1:y2, x1:x2]`).  
+   - El recorte permite centrar el análisis solo en el área relevante de cada frame, eliminando ruido visual.
+
+4. **Exportación de imágenes procesadas**  
+   - Guardado con `cv2.imwrite()` de los nuevos archivos (`resized_opencv.png` y `crop_opencv.png`) para uso en las siguientes fases del pipeline.
+
+### Objetivo
+Estandarizar y limpiar los frames para que los datos visuales estén listos para análisis, modelado o integración en pipelines de visión por computadora.
