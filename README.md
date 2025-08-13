@@ -58,3 +58,16 @@ En esta fase, nos enfocamos en la creación y validación de datasets anotados p
 
 ### Objetivo
 Consolidar un flujo completo y confiable de anotación y validación de datos visuales, utilizando formatos estándar (YOLO y COCO), que permita generar datasets de alta calidad listos para entrenamiento de modelos de visión por computadora. Esto asegura que las anotaciones sean precisas, consistentes y compatibles con múltiples frameworks, facilitando el desarrollo eficiente y escalable de soluciones de detección y clasificación.
+
+## Validación de Dataset y Configuración de Remoto S3 con DVC
+
+### 🔍 Actividades realizadas
+- Verificación de que las etiquetas coincidan con las imágenes y registro de las que no están etiquetadas en un `.csv`.
+- Detección de imágenes **duplicadas** (mismo hash) y **corruptas** (archivos incompletos o ilegibles).
+- Comprensión de la estructura interna del cache de DVC (`.dvc/cache`), con subcarpetas basadas en los primeros 2 caracteres del hash.
+- Ejecución de `dvc push` para subir el dataset validado al bucket S3.
+
+### 📚 Conocimientos consolidados
+- Uso de **hashes SHA-256** para identificar y deduplicar archivos.
+- Relación entre cache local de DVC y almacenamiento remoto.
+
