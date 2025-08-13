@@ -1,5 +1,5 @@
 .venv/ 
-data/processed
+data/temp
 __pycache__/ 
 .ipynb_checkpoints/
 .dvc/
