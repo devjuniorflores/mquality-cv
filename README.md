@@ -71,3 +71,5 @@ Consolidar un flujo completo y confiable de anotación y validación de datos vi
 - Uso de **hashes SHA-256** para identificar y deduplicar archivos.
 - Relación entre cache local de DVC y almacenamiento remoto.
 
+### Objetivo
+Validar la integridad y consistencia del dataset, eliminando duplicados y detectando archivos corruptos, para luego configurar y subir el conjunto de datos a un almacenamiento remoto en Amazon S3 mediante DVC.
