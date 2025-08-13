@@ -73,3 +73,29 @@ Consolidar un flujo completo y confiable de anotación y validación de datos vi
 
 ### Objetivo
 Validar la integridad y consistencia del dataset, eliminando duplicados y detectando archivos corruptos, para luego configurar y subir el conjunto de datos a un almacenamiento remoto en Amazon S3 mediante DVC.
+
+## Preprocesamiento en Computer Vision
+---
+
+### 🔹 Actividades realizadas
+1. **Resize uniforme** de las imágenes a dimensiones estándar (ej. `640x640`).
+2. **Normalización** de valores de píxeles a escala `[0,1]` (px/255).
+3. **Data augmentation** con rotaciones, flips, y blur para aumentar diversidad.
+4. **Balanceo de clases** mediante técnicas de oversampling (creación de datos sintéticos).
+5. **Estructuración final** del dataset en `data/processed/` manteniendo subcarpetas por clase.
+6. **Creación de validador** para verificar integridad y conteo de imágenes por clase.
+7. **Discusión sobre versionado con DVC**:
+   - **Versionar:** `raw/` y `processed/`
+   - **No versionar:** `temp/` (datos intermedios regenerables)
+
+---
+
+### 📌 Conocimientos reforzados
+- Identificación y corrección de **desbalance de clases**.
+- Importancia de la **normalización de datos** y escalas correctas (`[0,1]` o `[-1,1]`).
+- Uso de **data augmentation** para robustecer el modelo.
+- Buenas prácticas en **gobernanza de datos** con DVC.
+- Diferencia entre datos **intermedios** y datos **versionables**.
+
+  **Objetivo del día:**  
+Implementar el pipeline de preprocesamiento y dejar el dataset listo para entrenamiento.
