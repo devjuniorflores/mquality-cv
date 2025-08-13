@@ -3,7 +3,7 @@ import csv
 from PIL import Image
 
 # Rutas
-images_dir = "data/processed"
+images_dir = "data/raw/frames_video"
 labels_dir = "data/raw/annotations_yolo/obj_train_data"
 
 # Extensiones de imagen aceptadas

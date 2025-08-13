@@ -4,7 +4,7 @@ import pandas as pd
 from PIL import Image
 
 # Ruta donde buscar imágenes
-carpeta = "data/processed/"
+carpeta = "data/raw/frames_video"
 
 # Extensiones de imagen que vamos a revisar
 extensiones = (".jpg", ".jpeg", ".png", ".bmp", ".tiff", ".gif")
