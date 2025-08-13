@@ -74,8 +74,7 @@ Consolidar un flujo completo y confiable de anotación y validación de datos vi
 ### Objetivo
 Validar la integridad y consistencia del dataset, eliminando duplicados y detectando archivos corruptos, para luego configurar y subir el conjunto de datos a un almacenamiento remoto en Amazon S3 mediante DVC.
 
-## Preprocesamiento en Computer Vision
----
+## Preprocesamiento
 
 ### 🔹 Actividades realizadas
 1. **Resize uniforme** de las imágenes a dimensiones estándar (ej. `640x640`).
