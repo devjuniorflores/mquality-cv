@@ -98,3 +98,25 @@ Validar la integridad y consistencia del dataset, eliminando duplicados y detect
 
   **Objetivo del día:**  
 Implementar el pipeline de preprocesamiento y dejar el dataset listo para entrenamiento.
+
+## Estructuración de datasets para frameworks
+
+### 🔹 Actividades realizadas
+- Creación de la estructura YOLO (`images/train`, `labels/train`, `images/val`, `labels/val`).
+- División del dataset en 80% entrenamiento y 20% validación.
+- Verificación de correspondencia entre imágenes y sus archivos `.txt` de anotaciones.
+- Prueba de carga del dataset YOLO en un script para validar integridad.
+- Registro del dataset COCO en Detectron2.
+- Implementación de un `CustomDataset` en PyTorch con `__len__` y `__getitem__`.
+- Uso de `DataLoader` para iterar sobre batches y manejo de anotaciones con tamaños variables.
+
+### 📌 Conocimientos reforzados
+- Estructuración y división de datasets para entrenamiento y validación.
+- Formatos de anotaciones YOLO y COCO y sus diferencias.
+- Funcionamiento de `CustomDataset` en PyTorch.
+- Uso de `DataLoader` para cargar datos por lotes.
+- Manejo de bounding boxes y compatibilidad de dimensiones en tensores.
+
+  **Objetivo del día:**  
+Organizar, convertir y probar datasets en formatos YOLO y COCO para asegurar su correcta carga y manipulación en PyTorch y Detectron2.
+
