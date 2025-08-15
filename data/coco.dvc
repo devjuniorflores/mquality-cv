@@ -1,0 +1,6 @@
+outs:
+- md5: 0550da56f9111fc79ba19e996fe64ff1.dir
+  size: 58371
+  nfiles: 2
+  hash: md5
+  path: coco
