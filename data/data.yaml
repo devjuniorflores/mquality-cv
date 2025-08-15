@@ -1,0 +1,5 @@
+train: ../data/yolo/images/train
+val: ../data/yolo/images/val
+
+nc: 1  # Número de clases
+names: ["person"]
