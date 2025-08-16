@@ -5,5 +5,6 @@ __pycache__/
 .ipynb_checkpoints/
 .dvc/
 dags/logs
-dags/plugins
+dags/plugin
 dags_prueba
+dags/__pycache__

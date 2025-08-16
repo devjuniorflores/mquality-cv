@@ -1,6 +1,6 @@
 from airflow import DAG
-from airflow.operators.python import PythonOperator
-from airflow.operators.empty import EmptyOperator
+from airflow.operators import PythonOperator
+from airflow.operators import EmptyOperator
 from datetime import datetime, timedelta
 
 # Configuración por defecto
