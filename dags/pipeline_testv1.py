@@ -1,6 +1,6 @@
 from airflow import DAG
-from airflow.operators.python import PythonOperator
-from airflow.operators.empty import EmptyOperator  # reemplazo de DummyOperator
+from airflow.operators import PythonOperator
+from airflow.operators import EmptyOperator  # reemplazo de DummyOperator
 from datetime import datetime
 
 # Definición de funciones

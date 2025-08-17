@@ -3,18 +3,18 @@ from airflow.operators import PythonOperator
 from airflow.operators import EmptyOperator
 from datetime import datetime, timedelta
 
-# Configuración por defecto para todas las tareas
+# Configuración por defecto
 default_args = {
     "owner": "data-team",
     "depends_on_past": False,
-    "email": ["jndrs2111@gmail.com"],
-    "email_on_failure": True,
+    "email": ["jndrs2111@gmail.com"],  # destinatario
+    "email_on_failure": True,          # ✅ se envía correo si falla
     "email_on_retry": False,
-    "retries": 2,
-    "retry_delay": timedelta(minutes=5),
+    "retries": 1,                      # número de reintentos
+    "retry_delay": timedelta(minutes=1),
 }
 
-# Funciones de ejemplo (puedes reemplazarlas con tus procesos reales)
+# Funciones ETL
 def extract():
     print("📥 Extrayendo datos...")
 
@@ -24,15 +24,19 @@ def transform():
 def load():
     print("📦 Cargando datos al destino final...")
 
-# Definición del DAG
+def simular_fallo():
+    print("💥 Esta tarea va a fallar intencionalmente...")
+    raise ValueError("Fallo forzado para probar retries ⚡")
+
+# DAG
 with DAG(
-    dag_id="etl_template",
-    description="Plantilla estándar para DAGs de ETL",
+    dag_id="etl_template_recontra_actualizado",
+    description="Plantilla ETL con simulación de fallo y reintentos",
     default_args=default_args,
-    start_date=datetime(2025, 8, 14),  # Siempre al menos 1 día antes
-    schedule=None,  # Puedes cambiarlo a "0 2 * * *" para diario a las 2am
+    start_date=datetime(2025, 8, 15),
+    schedule=None,
     catchup=False,
-    tags=["etl", "template", "best-practices"],
+    tags=["etl", "template", "test-fallo"],
 ) as dag:
 
     inicio = EmptyOperator(task_id="inicio")
@@ -47,6 +51,11 @@ with DAG(
         python_callable=transform,
     )
 
+    fallo_task = PythonOperator(
+        task_id="simular_fallo",
+        python_callable=simular_fallo,
+    )
+
     load_task = PythonOperator(
         task_id="load",
         python_callable=load,
@@ -55,4 +64,4 @@ with DAG(
     fin = EmptyOperator(task_id="fin")
 
     # Flujo del DAG
-    inicio >> extract_task >> transform_task >> load_task >> fin
+    inicio >> extract_task >> transform_task >> fallo_task >> load_task >> fin
