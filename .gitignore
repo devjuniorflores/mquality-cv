@@ -4,7 +4,5 @@ data/temp
 __pycache__/ 
 .ipynb_checkpoints/
 .dvc/
-dags/logs
-dags/plugin
-dags_prueba
-dags/__pycache__
+airflow-dags/logs
+airflow-dags/plugins
