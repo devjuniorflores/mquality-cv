@@ -123,7 +123,7 @@ Organizar, convertir y probar datasets en formatos YOLO y COCO para asegurar su 
 ## 📂 Estructura Final del proyecto
 ```plaintext
 ├── .venv/                # Entorno Virtual
-├── airflow-dags/         # Jupyter notebooks
+├── airflow-dags/         
 │   ├── dags/             # DAGS
 ├── data/
 │   ├── raw/              # Datos originales (no versionados en Git)
