@@ -120,6 +120,20 @@ Implementar el pipeline de preprocesamiento y dejar el dataset listo para entren
   **Objetivo del día:**  
 Organizar, convertir y probar datasets en formatos YOLO y COCO para asegurar su correcta carga y manipulación en PyTorch y Detectron2.
 
+## 📂 Estructura Final del proyecto
+```plaintext
+├── .venv/                # Entorno Virtual
+├── airflow-dags/         # Jupyter notebooks
+│   ├── dags/             # DAGS
+├── data/
+│   ├── raw/              # Datos originales (no versionados en Git)
+│   └── processed/        # Datos procesados
+├── notebooks/            # Jupyter notebooks
+├── src/                  # Código fuente
+├── .gitignore            # Ignorar data y archivos temporales
+├── README.md             # Documentación principal
+```
+
 
 ## Orquestación de pipelines de datos (Airflow)
 
