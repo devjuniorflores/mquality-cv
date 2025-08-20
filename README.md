@@ -120,3 +120,23 @@ Implementar el pipeline de preprocesamiento y dejar el dataset listo para entren
   **Objetivo del día:**  
 Organizar, convertir y probar datasets en formatos YOLO y COCO para asegurar su correcta carga y manipulación en PyTorch y Detectron2.
 
+
+## Orquestación de pipelines de datos (Airflow)
+
+### 🔹 Actividades realizadas
+- Instalación y configuración inicial de **Apache Airflow** en entorno local.
+- Creación de un **DAG** con pasos clave: descarga → validación → preprocesamiento → exportación → registro en DVC.
+- Uso de **PythonOperator / TaskFlow API** para definir cada tarea.
+- Ejecución manual de un DAG con `airflow dags trigger`.
+- Simulación de fallo en una tarea y verificación de reintento.
+- Exploración de la **UI de Airflow**: monitoreo de logs, dependencias y estado de ejecución.
+
+### 📌 Conocimientos reforzados
+- Concepto de **orquestación de pipelines**: dividir procesos complejos en tareas pequeñas y manejables.
+- Importancia de los **DAGs** para estructurar dependencias y orden en el flujo de datos.
+- Manejo de **reintentos** y tolerancia a fallos en pipelines.
+- Integración de **Airflow + DVC** para versionar datasets dentro del flujo de orquestación.
+- Buenas prácticas: logs centralizados y monitoreo en la UI de Airflow.
+
+### 🎯 Objetivo del día
+Automatizar un pipeline de datos completo, asegurando que cada etapa (desde la descarga hasta el versionado) se ejecute de forma ordenada, reproducible y con capacidad de recuperación ante errores.
